@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="false"
+            locationURI="popup:org.eclipse.ui.popup.any?after=additions">
+         <menu
+               label="&amp;PNML Utils">
+            <command
+                  commandId="es.unizar.disco.pnml.utils.popup.handlers.ConvertToPnml"
+                  style="push"
+                  tooltip="Converts a PNML file stored as an XMI into its correspondent XML representation">
+               <visibleWhen
+                     checkEnabled="false">
+                  <iterate>
+                     <and>
+                        <test
+                              forcePluginActivation="true"
+                              property="es.unizar.disco.pnml.utils.isPnmlXmi"
+                              value="true">
+                        </test>
+                     </and>
+                  </iterate>
+               </visibleWhen>
+            </command>
+         </menu>
+      </menuContribution>
+   </extension>
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            defaultHandler="es.unizar.disco.pnml.utils.handlers.ConvertToPnml"
+            id="es.unizar.disco.pnml.utils.popup.handlers.ConvertToPnml"
+            name="Convert to &amp;PNML">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.core.expressions.propertyTesters">
+      <propertyTester
+            class="es.unizar.disco.pnml.utils.testers.PnmlXmiPropertyTester"
+            id="es.unizar.disco.pnml.utils.isPnmlXmi"
+            namespace="es.unizar.disco.pnml.utils"
+            properties="isPnmlXmi"
+            type="org.eclipse.core.resources.IFile">
+      </propertyTester>
+   </extension>
+
+</plugin>
