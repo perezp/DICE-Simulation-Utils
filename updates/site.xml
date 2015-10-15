@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <description name="DICE Simulation Utils" url="http://dice-project.github.io/DICE-Simulation-Utils/updates">
+      Optional utility plugins for the DICE-Simulation component
+   </description>
+   <feature url="features/es.unizar.disco.pnml.utils.feature_0.1.0.201510151829.jar" id="es.unizar.disco.pnml.utils.feature" version="0.1.0.201510151829">
+      <category name="DICE Simulation Utils"/>
+   </feature>
+   <category-def name="DICE Simulation Utils" label="DICE Simulation Utils">
+      <description>
+         Optional utility plugins for the DICE-Simulation component
+      </description>
+   </category-def>
+</site>
