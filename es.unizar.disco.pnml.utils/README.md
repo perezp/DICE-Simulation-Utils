@@ -4,6 +4,3 @@ This plugin provides some utilities to deal with PNML models. It allows, for exa
 
 This plugin requires [*PNML Framework*]( http://pnml.lip6.fr/ ) ([GitHub Project](https://github.com/lhillah/pnmlframework/)) v2.2.9 or higher due to bug [pnmlframework/issues/1]( https://github.com/lhillah/pnmlframework/issues/1 ).  
 
-# Installing the plugins
-
-In Eclipse, go to + Help -> Install New Software...` and use http://dice-project.github.io/DICE-Simulation-Utils/updates as the URL for the update site.
