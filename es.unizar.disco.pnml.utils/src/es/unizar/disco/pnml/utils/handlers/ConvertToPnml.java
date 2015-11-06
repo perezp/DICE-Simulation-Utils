@@ -59,24 +59,14 @@ public class ConvertToPnml extends AbstractHandler {
 							if (obj instanceof IFile) {
 								IFile file = (IFile) obj;
 								Resource resource = new XMIResourceImpl(URI.createPlatformResourceURI(file.getFullPath().toString(), true));
+								java.net.URI uri = file.getLocationURI();
 								try {
 									resource.load(Collections.emptyMap());
 									if (!resource.getContents().isEmpty()) {
 										if (resource.getContents().size() == 1) {
 											EObject rootEObject = resource.getContents().get(0);
-											java.net.URI uri = file.getLocationURI();
 											PNMLUtils.exportPetriNetDocToPNML(rootEObject,
 													new Path(URIUtil.toFile(uri).getAbsolutePath()).removeFileExtension().addFileExtension("pnml").toOSString());
-											IFile[] files = ResourcesPlugin.getWorkspace().getRoot().findFilesForLocationURI(uri);
-											for (IFile locatedFile : files) {
-												try {
-													if (locatedFile.getParent() != null) { 
-														locatedFile.getParent().refreshLocal(IResource.DEPTH_ONE, new SubProgressMonitor(monitor, 0));
-													}
-												} catch (CoreException e) {
-													// Do nothing: refresh failed 
-												}
-											}
 										} else {
 											return new Status(IStatus.ERROR, PnmlUtilsPlugin.PLUGIN_ID, 
 													MessageFormat.format(
@@ -91,6 +81,17 @@ public class ConvertToPnml extends AbstractHandler {
 								} finally {
 									if (resource != null) {
 										resource.unload();
+									}
+									// Refresh workspace
+									IFile[] files = ResourcesPlugin.getWorkspace().getRoot().findFilesForLocationURI(uri);
+									for (IFile locatedFile : files) {
+										try {
+											if (locatedFile.getParent() != null) { 
+												locatedFile.getParent().refreshLocal(IResource.DEPTH_ONE, new SubProgressMonitor(monitor, 0));
+											}
+										} catch (CoreException e) {
+											// Do nothing: refresh failed 
+										}
 									}
 								}
 							}
