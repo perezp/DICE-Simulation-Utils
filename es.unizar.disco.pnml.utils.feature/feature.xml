@@ -2,7 +2,7 @@
 <feature
       id="es.unizar.disco.pnml.utils.feature"
       label="PNML Utils"
-      version="0.1.4.qualifier"
+      version="0.1.5.qualifier"
       provider-name="DisCo - Unizar">
 
    <description url="https://github.com/dice-project/DICE-Simulation-Utils">
@@ -238,7 +238,7 @@ any resulting litigation.
          id="es.unizar.disco.pnml.utils"
          download-size="0"
          install-size="0"
-         version="0.1.4.qualifier"
+         version="0.1.5.qualifier"
          unpack="false"/>
 
 </feature>
