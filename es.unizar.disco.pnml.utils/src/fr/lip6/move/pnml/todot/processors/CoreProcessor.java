@@ -104,7 +104,7 @@ public class CoreProcessor extends Processor {
 		incrementDecalage();
 		print("ordering=out;");
 		print("comment=\"" + workOnName(pth) + "\";");
-		print("color=blue;");
+		print("color=none;");
 		for (PageHLAPI iterableElement : pth.getObjects_PageHLAPI()) {
 			processPages(iterableElement);
 		}

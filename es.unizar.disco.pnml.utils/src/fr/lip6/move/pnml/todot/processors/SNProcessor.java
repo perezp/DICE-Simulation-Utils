@@ -99,7 +99,7 @@ public class SNProcessor extends Processor {
 		incrementDecalage();
 		print("ordering=out;");
 		print("comment=\"" + workOnName(pth) + "\";");
-		print("color=blue;");
+		print("color=none;");
 		for (PageHLAPI iterableElement : pth.getObjects_hlcorestructure_PageHLAPI()) {
 			processPages(iterableElement);
 		}
