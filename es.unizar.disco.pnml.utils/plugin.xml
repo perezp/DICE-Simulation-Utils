@@ -42,6 +42,23 @@
                   </iterate>
                </visibleWhen>
             </command>
+            <command
+                  commandId="es.unizar.disco.pnml.utils.popup.handlers.ConvertToDot"
+                  style="push"
+                  tooltip="Converts a PNML file to DOT">
+               <visibleWhen
+                     checkEnabled="false">
+                  <iterate>
+                     <and>
+                        <test
+                              forcePluginActivation="true"
+                              property="org.eclipse.core.resources.extension"
+                              value="pnml">
+                        </test>
+                     </and>
+                  </iterate>
+               </visibleWhen>
+            </command>
          </menu>
       </menuContribution>
    </extension>
@@ -56,6 +73,11 @@
             defaultHandler="es.unizar.disco.pnml.utils.handlers.ValidatePnml"
             id="es.unizar.disco.pnml.utils.popup.handlers.ValidatePnml"
             name="Validate &amp;PNML">
+      </command>
+      <command
+            defaultHandler="es.unizar.disco.pnml.utils.handlers.ConvertToDot"
+            id="es.unizar.disco.pnml.utils.popup.handlers.ConvertToDot"
+            name="Convert to &amp;DOT">
       </command>
    </extension>
    <extension
