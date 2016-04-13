@@ -16,9 +16,11 @@ import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.ui.handlers.HandlerUtil;
 
 import es.unizar.disco.pnml.utils.PnmlUtilsPlugin;
+import fr.lip6.move.pnml.framework.utils.ModelRepository;
 import fr.lip6.move.pnml.framework.utils.PNMLUtils;
 import fr.lip6.move.pnml.framework.utils.exception.ImportException;
 import fr.lip6.move.pnml.framework.utils.exception.InvalidIDException;
+import fr.lip6.move.pnml.framework.utils.exception.VoidRepositoryException;
 
 public class ValidatePnml extends AbstractHandler {
 
@@ -42,7 +44,8 @@ public class ValidatePnml extends AbstractHandler {
 								IFile file = (IFile) obj;
 								try {
 									PNMLUtils.importPnmlDocument(file.getLocation().toFile(), false);
-								} catch (InvalidIDException | ImportException e) {
+									ModelRepository.getInstance().destroyCurrentWorkspace();
+								} catch (InvalidIDException | ImportException | VoidRepositoryException e) {
 									return new Status(IStatus.ERROR, PnmlUtilsPlugin.PLUGIN_ID, e.getLocalizedMessage(), e);
 								}
 							}

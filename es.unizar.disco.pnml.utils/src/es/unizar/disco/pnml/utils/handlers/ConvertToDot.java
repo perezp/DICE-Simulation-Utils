@@ -23,9 +23,11 @@ import org.eclipse.ui.handlers.HandlerUtil;
 
 import es.unizar.disco.pnml.utils.PnmlUtilsPlugin;
 import fr.lip6.move.pnml.framework.hlapi.HLAPIRootClass;
+import fr.lip6.move.pnml.framework.utils.ModelRepository;
 import fr.lip6.move.pnml.framework.utils.PNMLUtils;
 import fr.lip6.move.pnml.framework.utils.exception.ImportException;
 import fr.lip6.move.pnml.framework.utils.exception.InvalidIDException;
+import fr.lip6.move.pnml.framework.utils.exception.VoidRepositoryException;
 import fr.lip6.move.pnml.todot.processors.MainProcessor;
 import fr.lip6.move.pnml.todot.processors.Processor;
 import fr.lip6.move.pnml.todot.utils.UnHandledType;
@@ -61,7 +63,8 @@ public class ConvertToDot extends AbstractHandler {
 									} else {
 										resultFile.create(new ByteArrayInputStream(byteStream.toByteArray()), IResource.FORCE, monitor);
 									}
-								} catch (InvalidIDException | ImportException | UnHandledType | CoreException e) {
+									ModelRepository.getInstance().destroyCurrentWorkspace();
+								} catch (InvalidIDException | ImportException | UnHandledType | CoreException | VoidRepositoryException e) {
 									return new Status(IStatus.ERROR, PnmlUtilsPlugin.PLUGIN_ID, e.getLocalizedMessage(), e);
 								}
 							}
