@@ -45,15 +45,15 @@
             <command
                   commandId="es.unizar.disco.pnml.utils.popup.handlers.ConvertToDot"
                   style="push"
-                  tooltip="Converts a PNML file to DOT">
+                  tooltip="Converts an PNML-XMI file to DOT">
                <visibleWhen
                      checkEnabled="false">
                   <iterate>
                      <and>
                         <test
                               forcePluginActivation="true"
-                              property="org.eclipse.core.resources.extension"
-                              value="pnml">
+                              property="es.unizar.disco.pnml.utils.isPnmlXmi"
+                              value="true">
                         </test>
                      </and>
                   </iterate>
