@@ -2,7 +2,7 @@
 <feature
       id="es.unizar.disco.pnml.utils.feature"
       label="PNML Utils"
-      version="0.2.0.qualifier"
+      version="0.2.1.qualifier"
       provider-name="DisCo - Unizar">
 
    <description url="https://github.com/dice-project/DICE-Simulation-Utils">
@@ -225,12 +225,13 @@ any resulting litigation.
       <import plugin="org.eclipse.core.resources"/>
       <import plugin="org.eclipse.core.expressions"/>
       <import plugin="org.eclipse.emf.ecore.xmi"/>
-      <import plugin="fr.lip6.pnml.framework.coremodel" version="2.2.9" match="greaterOrEqual"/>
-      <import plugin="fr.lip6.pnml.framework.hlpn" version="2.2.9" match="greaterOrEqual"/>
-      <import plugin="fr.lip6.pnml.framework.pthlpng" version="2.2.9" match="greaterOrEqual"/>
-      <import plugin="fr.lip6.pnml.framework.ptnet" version="2.2.9" match="greaterOrEqual"/>
-      <import plugin="fr.lip6.pnml.framework.symmetricnet" version="2.2.9" match="greaterOrEqual"/>
-      <import plugin="fr.lip6.pnml.framework.utils" version="2.2.9" match="greaterOrEqual"/>
+      <import plugin="fr.lip6.pnml.framework.coremodel" version="2.2.12" match="greaterOrEqual"/>
+      <import plugin="fr.lip6.pnml.framework.ptnet" version="2.2.12" match="greaterOrEqual"/>
+      <import plugin="fr.lip6.pnml.framework.utils" version="2.2.12" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.acceleo.common" version="3.3.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.acceleo.model" version="3.3.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.acceleo.profiler" version="3.3.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.acceleo.engine" version="3.3.0" match="greaterOrEqual"/>
       <import feature="fr.lip6.pnml.framework.sdk" version="2.2.9" match="greaterOrEqual"/>
    </requires>
 
@@ -238,7 +239,7 @@ any resulting litigation.
          id="es.unizar.disco.pnml.utils"
          download-size="0"
          install-size="0"
-         version="0.2.0.qualifier"
+         version="0.2.1.qualifier"
          unpack="false"/>
 
 </feature>
