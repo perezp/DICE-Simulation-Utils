@@ -2,7 +2,7 @@
 <feature
       id="es.unizar.disco.pnml.utils.feature"
       label="PNML Utils"
-      version="0.2.1.qualifier"
+      version="0.2.2.qualifier"
       provider-name="DisCo - Unizar">
 
    <description url="https://github.com/dice-project/DICE-Simulation-Utils">
@@ -233,13 +233,14 @@ any resulting litigation.
       <import plugin="org.eclipse.acceleo.profiler" version="3.3.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.acceleo.engine" version="3.3.0" match="greaterOrEqual"/>
       <import feature="fr.lip6.pnml.framework.sdk" version="2.2.9" match="greaterOrEqual"/>
+      <import plugin="es.unizar.disco.pnml.m2t" version="0.3.2" match="greaterOrEqual"/>
    </requires>
 
    <plugin
          id="es.unizar.disco.pnml.utils"
          download-size="0"
          install-size="0"
-         version="0.2.1.qualifier"
+         version="0.2.2.qualifier"
          unpack="false"/>
 
 </feature>
