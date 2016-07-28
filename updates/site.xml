@@ -25,6 +25,9 @@
    <feature url="features/es.unizar.disco.pnml.utils.feature_0.2.0.201607041606.jar" id="es.unizar.disco.pnml.utils.feature" version="0.2.0.201607041606">
       <category name="DICE Simulation Utils"/>
    </feature>
+   <feature url="features/es.unizar.disco.pnml.utils.feature_0.2.1.201607281421.jar" id="es.unizar.disco.pnml.utils.feature" version="0.2.1.201607281421">
+      <category name="DICE Simulation Utils"/>
+   </feature>
    <category-def name="DICE Simulation Utils" label="DICE Simulation Utils">
       <description>
          Optional utility plugins for the DICE-Simulation component
