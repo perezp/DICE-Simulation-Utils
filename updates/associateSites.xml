@@ -4,4 +4,5 @@
 -->
 <associateSites>
 	<associateSite url="http://pnml.lip6.fr/pnmlframework/updatesite" label="PNML Framework"/>
+	<associateSite url="http://dice-project.github.io/DICE-Simulation/updates" label="DICE-Simulation"/>
 </associateSites>
